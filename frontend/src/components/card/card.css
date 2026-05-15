@@ -1,0 +1,112 @@
+.card {
+  width: 100%;
+  background: transparent;
+  border-radius: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* IMAGE */
+.card-img {
+  width: 100%;
+  height: 380px;
+  background-color: #111;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  opacity: 0.85;
+}
+
+.card:hover .card-img img {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+/* OVERLAY ON HOVER */
+.card-img::after {
+  content: 'VIEW DETAILS';
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  background-color: rgba(224, 180, 113, 0.95);
+  color: #000;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  transition: bottom 0.4s ease;
+}
+
+.card:hover .card-img::after {
+  bottom: 0;
+}
+
+/* BODY */
+.card-body {
+  padding: 0 10px;
+  text-align: left; /* Changed to left to align with flex row */
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--color-light);
+  margin-bottom: 8px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.card-category {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.card-price {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--color-gold);
+  font-weight: 400;
+}
+
+/* BUY BUTTON */
+.buy-btn {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  background-color: transparent;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buy-btn:hover {
+  background-color: var(--color-gold);
+  color: var(--color-dark);
+}

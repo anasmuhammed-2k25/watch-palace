@@ -1,0 +1,65 @@
+/* Container */
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+/* Label */
+.inputBox label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-left: 5px;
+}
+
+/* Input Field */
+.inputBox input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+
+  background: rgba(255, 255, 255, 0.85);
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus Effect */
+.inputBox input:focus {
+  background: #ffffff;
+  box-shadow: 0 0 0 2px #667eea;
+  transform: scale(1.02);
+}
+
+/* Placeholder */
+.inputBox input::placeholder {
+  color: #888;
+  font-size: 13px;
+}
+
+/* Hover */
+.inputBox input:hover {
+  background: #ffffff;
+}
+
+/* Error state (optional) */
+.inputBox.error input {
+  box-shadow: 0 0 0 2px #ff4d4f;
+}
+
+/* Success state (optional) */
+.inputBox.success input {
+  box-shadow: 0 0 0 2px #28a745;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .inputBox input {
+    font-size: 13px;
+    padding: 10px;
+  }
+}

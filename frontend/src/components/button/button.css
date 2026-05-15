@@ -1,0 +1,51 @@
+/* Base Button */
+.button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+
+  /* Default gradient (fallback) */
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effect */
+.button:hover {
+  transform: translateY(-2px) scale(1.02);
+  opacity: 0.95;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Active (click) */
+.button:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Disabled */
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Optional: outline style */
+.button.outline {
+  background: transparent;
+  border: 2px solid #667eea;
+  color: #667eea;
+}
+
+.button.outline:hover {
+  background: #667eea;
+  color: #fff;
+}

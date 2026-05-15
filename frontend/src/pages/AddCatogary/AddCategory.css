@@ -1,0 +1,113 @@
+.category-page {
+  margin-left: 240px; /* offset sidebar */
+  padding: 50px;
+  min-height: 100vh;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+.category-page h2,
+.category-page h3 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  color: var(--color-gold);
+  letter-spacing: 1px;
+}
+
+.category-page h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+}
+
+.category-page h3 {
+  font-size: 1.8rem;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(224, 180, 113, 0.2);
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.category-page form {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(224, 180, 113, 0.15);
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  max-width: 600px;
+}
+
+.category-page input[type="text"] {
+  flex: 1;
+  padding: 12px 15px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-light);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.category-page input[type="text"]:focus {
+  outline: none;
+  border-bottom: 1px solid var(--color-gold);
+}
+
+.category-page button[type="submit"] {
+  padding: 12px 30px;
+  background: var(--color-gold);
+  color: var(--color-dark);
+  border: none;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-page button[type="submit"]:hover {
+  background: var(--color-gold-hover);
+  transform: translateY(-2px);
+}
+
+.category-page ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+}
+
+.category-page li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 10px;
+  font-family: var(--font-body);
+  transition: all 0.3s ease;
+}
+
+.category-page li:hover {
+  background: rgba(224, 180, 113, 0.05);
+  border-color: rgba(224, 180, 113, 0.2);
+}
+
+.category-page li button {
+  background: transparent;
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+  padding: 5px 15px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-page li button:hover {
+  background: #ff6b6b;
+  color: var(--color-dark);
+}

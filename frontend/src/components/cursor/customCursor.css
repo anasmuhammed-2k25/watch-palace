@@ -1,0 +1,50 @@
+/* Custom Cursor Styles */
+body {
+  /* Hide the default cursor */
+  cursor: none;
+}
+
+/* Ensure interactive elements also hide cursor, as the fallback might kick in */
+a, button, input, .item-card {
+  cursor: none !important;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(224, 180, 113, 0.6);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  transition: width 0.2s, height 0.2s, background-color 0.2s, transform 0.1s ease-out;
+}
+
+/* Hover effects */
+.cursor-dot.hovering {
+  background-color: transparent;
+}
+
+.cursor-outline.hovering {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(224, 180, 113, 0.1);
+  border-color: var(--color-gold);
+}
