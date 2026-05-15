@@ -3,6 +3,8 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import Sidebar from "../../components/sideBar/SideBar";
 import "../../components/form/form.css"; // Reuse the beautiful form styling!
+const API = import.meta.env.VITE_API_URL;
+
 
 function EditPage() {
   const { id } = useParams();
@@ -27,7 +29,7 @@ function EditPage() {
   const fetchProduct = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/products/${id}`
+        `${API}/products/${id}`
       );
 
       const data = res.data.data;
@@ -38,7 +40,7 @@ function EditPage() {
         category: data.category?._id || data.category || "",
         image: null,
         preview: data.image
-          ? `http://localhost:5000/images/${data.image}`
+          ? `${API}/images/${data.image}`
           : "",
       });
 
@@ -50,7 +52,7 @@ function EditPage() {
   const fetchCategories = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/categories"
+        `${API}/categories`
       );
       setCategories(res.data.data || []);
     } catch (err) {
@@ -85,7 +87,7 @@ function EditPage() {
       }
 
       await axios.put(
-        `http://localhost:5000/products/${id}`,
+        `${API}/products/${id}`,
         formData
       );
 

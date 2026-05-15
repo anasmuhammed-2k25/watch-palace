@@ -26,7 +26,7 @@ const app = express();
 // ================= DB CONNECTION (FIXED) =================
 // 🔥 Direct connection (NO ENV ERROR)
 mongoose
-  .connect("mongodb://127.0.0.1:27017/categoryDB")
+  .connect("mongodb://muhammedanas8727_db_user:anaskudu3002@ac-vaoiyib-shard-00-00.7s5eup5.mongodb.net:27017,ac-vaoiyib-shard-00-01.7s5eup5.mongodb.net:27017,ac-vaoiyib-shard-00-02.7s5eup5.mongodb.net:27017/?ssl=true&replicaSet=atlas-iowz4h-shard-0&authSource=admin&appName=Cluster0")
   .then(() => console.log("MongoDB Connected ✅"))
   .catch((err) => console.log("DB Error ❌:", err));
 

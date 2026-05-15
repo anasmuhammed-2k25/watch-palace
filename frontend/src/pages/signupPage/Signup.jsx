@@ -3,6 +3,8 @@ import axios from "axios";
 import "./signupPage.css";
 import { useNavigate, Link } from "react-router-dom";
 import Nav from "../../components/nav/Nav";
+const API = import.meta.env.VITE_API_URL;
+
 
 function Signup() {
   const [name, setName] = useState("");
@@ -39,7 +41,7 @@ function Signup() {
     if (Object.keys(newErrors).length > 0) return;
 
     try {
-      const res = await axios.post("http://localhost:5000/signup", {
+      const res = await axios.post(`${API}/signup`, {
         name,
         email,
         password,

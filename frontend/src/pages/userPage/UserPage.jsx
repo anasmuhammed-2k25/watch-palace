@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Sidebar from "../../components/sideBar/SideBar";
 import "../adminPanel/adminPanel.css"; // Reuse admin panel styling
+const API = import.meta.env.VITE_API_URL;
 
 function UserPage() {
   const [users, setUsers] = useState([]);
@@ -12,7 +13,7 @@ function UserPage() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/users");
+      const res = await axios.get(`${API}/users`);
       if (res.data.success) {
         setUsers(res.data.data || []);
       }

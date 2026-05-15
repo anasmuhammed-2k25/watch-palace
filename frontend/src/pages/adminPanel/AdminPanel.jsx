@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/sideBar/SideBar";
 import "./adminPanel.css";
+const API = import.meta.env.VITE_API_URL;
 
 function AdminPanel() {
   const [products, setProducts] = useState([]);
@@ -15,7 +16,7 @@ function AdminPanel() {
   // GET PRODUCTS
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/products");
+      const res = await axios.get(`${API}/products`);
       setProducts(res.data.data || []);
     } catch (error) {
       console.log("Fetch error:", error);
@@ -25,7 +26,7 @@ function AdminPanel() {
   // DELETE PRODUCT
   const handleDelete = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:5000/products/${id}`);
+      const res = await axios.delete(`${API}/products/${id}`);
 
       if (res.data.success) {
         setProducts((prev) => prev.filter((item) => item._id !== id));
@@ -76,7 +77,7 @@ function AdminPanel() {
 
                 <td>
                   <img
-                    src={`http://localhost:5000/images/${item.image}`}
+                    src={`${API}/images/${item.image}`}
                     alt={item.name}
                     width="50"
                     height="50"

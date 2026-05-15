@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Sidebar from "../../components/sideBar/SideBar";
 import "../adminPanel/adminPanel.css"; // Reuse admin panel styling
+const API = import.meta.env.VITE_API_URL;
+
 
 function RestorePage() {
   const [products, setProducts] = useState([]);
@@ -12,7 +14,7 @@ function RestorePage() {
 
   const fetchDeletedProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/products/deleted");
+      const res = await axios.get(`${API}/products/deleted`);
       if (res.data.success) {
         setProducts(res.data.data || []);
       }
@@ -23,7 +25,7 @@ function RestorePage() {
 
   const handleRestore = async (id) => {
     try {
-      const res = await axios.put(`http://localhost:5000/products/restore/${id}`);
+      const res = await axios.put(`${API}/products/restore/${id}`);
 
       if (res.data.success) {
         // Remove item from UI once restored
@@ -59,7 +61,7 @@ function RestorePage() {
                   <td>{index + 1}</td>
                   <td>
                     <img
-                      src={`http://localhost:5000/images/${item.image}`}
+                      src={`${API}/images/${item.image}`}
                       alt={item.name}
                       width="50"
                       height="50"

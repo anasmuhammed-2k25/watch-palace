@@ -5,6 +5,7 @@ import { CartContext } from "../../context/CartContext";
 import Nav from "../../components/nav/Nav";
 import useScrollReveal from "../../hooks/useScrollReveal";
 import "./homePage.css";
+const API = import.meta.env.VITE_API_URL;
 
 import luxuryPerfumeBottle from "../../assets/luxury_perfume_bottle.png";
 
@@ -23,7 +24,7 @@ const Home = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/products");
+        const res = await axios.get( `${API}/products`);
 
         console.log("API:", res.data);
 
@@ -132,7 +133,7 @@ const Home = () => {
                   <img
                     src={
                       product.image
-                        ? `http://localhost:5000/images/${product.image}`
+                        ?  `${API}/images/${product.image}`
                         : luxuryPerfumeBottle
                     }
                     alt={product.name}
@@ -155,7 +156,7 @@ const Home = () => {
                           name: product.name,
                           price: product.price,
                           image: product.image
-                            ? `http://localhost:5000/images/${product.image}`
+                            ?  `${API}/images/${product.image}`
                             : luxuryPerfumeBottle,
                           category: product.category?.name
                         });

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./AddCategory.css";
+const API = import.meta.env.VITE_API_URL;
 
 function AddCategory() {
   const [name, setName] = useState("");
@@ -8,7 +9,7 @@ function AddCategory() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/categories");
+      const res = await axios.get(`${API}/categories`);
       setCategories(res.data.data);
     } catch (err) {
       console.log(err);
@@ -23,7 +24,7 @@ function AddCategory() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/categories", {
+      await axios.post(`${API}/categories`, {
         name,
       });
 
@@ -33,15 +34,14 @@ function AddCategory() {
       console.log(err);
     }
   };
-
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`http://localhost:5000/categories/${id}`);
-      fetchCategories();
-    } catch (err) {
-      console.log(err);
-    }
-  };
+const handleDelete = async (id) => {
+  try {
+    await axios.delete(`${API}/categories/${id}`);
+    fetchCategories();
+  } catch (err) {
+    console.log(err);
+  }
+};
 
  return (
   <div className="category-page">

@@ -5,13 +5,15 @@ import "./ProductPage.css";
 import Nav from "../../components/nav/Nav";
 import Card from "../../components/card/Card";
 
+const API = import.meta.env.VITE_API_URL;
+
 function ProductPage() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/products");
+        const res = await axios.get(`${API}/products`);
 
         if (res.data.success) {
           setProducts(res.data.data);
@@ -41,7 +43,7 @@ function ProductPage() {
                 price={product.price}
                 image={
                   product.image
-                    ? `http://localhost:5000/images/${product.image}`
+                    ?`${API}/images/${product.image}`
                     : ""
                 }
                 category={product.category?.name}
