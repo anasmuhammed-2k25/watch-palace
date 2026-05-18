@@ -1,8 +1,16 @@
 {
-  "rewrites": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "Backend/app.js",
+      "use": "@vercel/node"
     }
-  ]
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "Backend/app.js"
+    }
+  ],
+  "buildCommand": "npm install --prefix Backend && npm install --prefix Frontend && npm run build --prefix Frontend"
 }
