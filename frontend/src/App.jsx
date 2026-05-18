@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/homePage/Home";
 import Login from "./pages/loginPage/Login";
-import AdminPanel from "./pages/adminPanel/adminPanel";
+import AdminPanel from "./pages/adminPanel/AdminPanel";
 import AddProduct from "./pages/addProduct/AddProduct";
 import AddCategory from "./pages/AddCatogary/AddCatogary";
 import EditPage from "./pages/EditPage/EditPage";
